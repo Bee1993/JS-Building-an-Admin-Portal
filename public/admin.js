@@ -3,7 +3,7 @@ const { json } = require("body-parser");
 // Your Code Here
 async function main() {
 
-    let response = await fetch('http://localhost:3001/listBooks')
+    let response = await fetch('http://localhost:3001/listBooks');
 
     let books = await response.json()
 
@@ -25,7 +25,7 @@ function renderBook(book) {
     saveButton.addEventListener('click', () => {
         fetch('http://localhost:3001/updateBook', {
             method: 'PATCH',
-            headers: {
+            header: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
